@@ -1,0 +1,17 @@
+{
+  "name": "express-server-setup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "express": "^4.16.4"
+  },
+  "mode": "development",
+  "scripts": {
+    "build": "node server.js"
+  },
+  "keywords": [],
+  "author": "cryptoneum",
+  "email": "cryproneum@protonmail.com",
+  "license": "ISC"
+}
