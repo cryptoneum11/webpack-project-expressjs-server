@@ -1,24 +1,12 @@
-const jquery = require('jquery');
 const express = require('express');
 const server = express();
 const port = process.env.PORT || 8080;
 const eol = require('os').EOL;
 const fs = require('fs');
 let stream = fs.createWriteStream( './data.txt', {'flags':'a'} );
-// db
-//const mongoose = require('mongoose');
-//mongoose.connect('mongodb+srv://cluster0-9dxfg.mongodb.net/test');
-//mongoose.connect(uri, {useNewUrlParser:true});
-//let db = mongoose.connection;
-//db.on('error', console.error.bind(console, 'connection error:'));
-//db.once('open', ()=>{
-//  console.log('Connected to mongoDB');
-//});
-//db.findOne({ name: "crypto" });
 
-// try to connect with mongodb package
+// MongoDB connection credentials
 const MongoClient = require('mongodb').MongoClient;
-//const assert = require('assert');
 const uri = 'mongodb+srv://crypto:crypto@cluster0-9dxfg.mongodb.net/db1?retryWrites=true';
 const dbName = 'db1';
 
