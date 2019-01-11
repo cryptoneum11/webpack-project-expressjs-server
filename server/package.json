@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "devDependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "mongoose": "^5.4.3"
   },
   "mode": "development",
   "scripts": {
@@ -13,5 +14,8 @@
   "keywords": [],
   "author": "cryptoneum",
   "email": "cryproneum@protonmail.com",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
 }

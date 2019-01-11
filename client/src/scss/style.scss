@@ -2,3 +2,13 @@ html{
   font-family: 'Ubuntu';
 }
 
+.label{
+  display: block;
+  font-size: .75em;
+  color: #777;
+}
+
+.comment{
+  @extend .label;
+  font-size: .65em;
+}

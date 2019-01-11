@@ -4,9 +4,10 @@ html
     meta(charset='utf-8')
     title
   body
-    div Minimal webpack setup files for front-end development.
+    //div Minimal webpack setup files for front-end development.
+    h2 ExpressJS Routes 
     br
-    div Let's try a simple ajax request
+    div Let's try a simple ajax request to ExpressJS routes that we've defined 
     br
     div 'POST' test
     input.my-input-post(name='myvar' type='text' value='')
@@ -16,5 +17,25 @@ html
     div 'GET' test
     input.my-input-get(name='myvar' type='text' value='')
     button.my-button-get submit
+    br
+    br
+    h2 MongoDB 
+    br
+    div MongoDB - Find All Docs (get result from DB)
+    button.mongo-get get ALL data from 'db1.col1' Mongo collection
+    br
+    br
+    div MongoDB - Find a specific entry
+    //label(style='display:block') searches for users who are over age 20 (defined in "server.js") 
+    label.label e.g. - db.collection('col1').find( { "age" : { $gt: 20 } } )...
+    br
+    button.mongo-find-specific submit search and return data from db - 
+      span.comment defined in "server.js"
+    br
+    br
+    div MongoDB - Submit data to Mongo 
+    label.label e.g. - db.collection('col1').insertOne({name:"Hans", age:23, occupation:"JS Master"}...
+    br
+    button.mongo-submit submits data - 
+      span.comment defined in "server.js" 
   script(src="./js/main.js")
-  
