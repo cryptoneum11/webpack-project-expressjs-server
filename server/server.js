@@ -47,17 +47,17 @@ function insert_document(db, res, callback){
   });
 }
 // Find specific MongoDB data from collection "col1"
-function findSpecific(res, search){
+function findSpecific(res){
   MongoClient.connect(uri, {useNewUrlParser:true}, (err,client)=>{
     console.log('connected');
     const db = client.db(dbName);
-    find_specific_data(db, res, search, ()=>{
+    find_specific_data(db, res, ()=>{
       console.log('received specific mongoDB content!');
       client.close();
     });
   });
 }
-function find_specific_data(db, res, search, cb){ // 'search' param is a js object, key:value pair
+function find_specific_data(db, res, cb){ // 'search' param is a js object, key:value pair
   db.collection('col1').find( { "age" : { $gt: 20 } } ).toArray( (err,docs)=>{
     if(err)
       return;
@@ -76,13 +76,7 @@ server.get('/mongo', (req,res)=>{
 });
 
 server.get('/mongo-find-specific/', (req,res)=>{
-  let query = req.query;
-  console.log( query );
-  let key = req.query.key;
-  let value = req.query.value;
-  // value = parseInt( value );
-  let search = { key : parseInt( value ) };
-  findSpecific(res, search);
+  findSpecific(res);
 });
 
 server.post('/mongo-submit-data', (req,res)=>{
